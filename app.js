@@ -3,9 +3,19 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose'); //require in Mongoose for connection to Mongoose
+mongoose.connect('mongodb+srv://surveyAdmin:test123@cluster0-nmqxz.mongodb.net/test?retryWrites=true&w=majority', 
+{
+  useNewUrlParser: true 
+});
+
+var db = mongoose.connection;
+db.on('error', err => console.error(err));
+db.once('open', () => console.log('Connected to Mongoose'));
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var surveysRouter = require('./routes/surveys');
 
 var app = express();
 
@@ -21,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/surveys',surveysRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -8,10 +8,14 @@ nav.navbar.fixed-top.navbar-expand-lg.navbar-light.bg-light
 
   #navbarSupportedContent.collapse.navbar-collapse
     ul.navbar-nav.mr-auto
-      li.nav-item.active1
-        a.nav-link(href='/survey') Surveys
       li.nav-item.active2
         a.nav-link(href='/about') About
+      li.nav-item.dropdown
+        a.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') Surveys
+        .dropdown-menu
+          a.dropdown-item(href='/surveys') Surveys
+          a.dropdown-item(href='/surveys/new') New Survey
       li.nav-item.active3
         a.nav-link(href='/contact') Contact
+      
   

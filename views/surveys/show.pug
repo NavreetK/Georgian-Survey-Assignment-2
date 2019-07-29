@@ -1,0 +1,9 @@
+extends ../layout.pug
+block content
+  .container
+    header
+      h1= survey.title
+      small= survey.status.toLowerCase()
+
+    div
+      = survey.content || "Your story is processing..."

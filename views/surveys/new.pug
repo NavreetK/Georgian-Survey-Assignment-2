@@ -1,0 +1,22 @@
+extends ../layout.pug
+block content
+  .container
+    header
+      h1 New Survey 
+
+    div
+      form(action="/surveys", method="POST")
+        .form-group
+          label Title
+          input.form-control(name="survey[title]", required)
+
+        .form-group
+          label Question 1
+          textarea.form-control(name="survey[que1]")
+        
+        .form-group
+          label Author
+          input.form-control(name="survey[author]", required)
+
+        .form-group
+          button.btn.btn-dark(type="submit") Submit
