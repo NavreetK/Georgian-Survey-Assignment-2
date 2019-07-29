@@ -17,6 +17,13 @@ a {
   left: -10%;/*adding the hover animation on the nav links*/
 
 }
+.middle{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+}
 .btn{
   display: inline-block;
   width: 90px;
