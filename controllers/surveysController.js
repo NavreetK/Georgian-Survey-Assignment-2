@@ -3,6 +3,7 @@ const Survey = require ('../models/survey');
 exports.index = (req, res) => {
     Survey.find()
         .then(surveys => {
+            console.log(surveys)
             res.render('surveys/index', {
                 surveys: surveys,
                 title: "Survey_1"
