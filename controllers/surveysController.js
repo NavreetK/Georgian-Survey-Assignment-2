@@ -14,7 +14,11 @@ exports.index = (req, res) => {
         });
 };
 
-exports.show = (req, res) => {};
+exports.show = (req, res) => {
+    res.render('surveys/show', {
+        title: 'New Survey'
+    });
+};
 
 exports.new = (req, res) => {
     res.render('surveys/new', {

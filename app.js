@@ -16,6 +16,7 @@ db.once('open', () => console.log('Connected to Mongoose'));
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var surveysRouter = require('./routes/surveys');
+var authorsRouter = require('./routes/authors');
 
 var app = express();
 
@@ -29,9 +30,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/surveys',surveysRouter);
-app.use('/users', usersRouter);
+app.use('/authors',authorsRouter);
 app.use('/', indexRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

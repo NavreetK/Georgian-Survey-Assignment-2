@@ -26,9 +26,5 @@ router.get('/contact',(req,res,next)=>{
   res.render('contact',{});
 });
 
-// get services page
-router.get('/services',(req,res,next)=>{
-  res.render('services',{});
-});
 
 module.exports = router;
