@@ -17,7 +17,7 @@ block content
         input(type="text", name="username", placeholder="Paramvir Singh" id="username", required).form-control.input-lg
         p Fill in the questions below and submit the form to get the shareable link.
         
-      - var questions = 10
+      - var questions = Array(10);
       each question in questions
         - var randomOption = Math.floor(Math.random() * (4 - 1) + 1);
         div.span#questions
@@ -25,20 +25,20 @@ block content
           - var name = "question" + question
             input(type="text", name=name, placeholder="Question " + question, required).form-control.input-lg
             br
-          - var options = 4
-          each option in options
-            div.form-group
-              - var optionName = name + "option" + option
-              - var selectedOption = "question" + question + "selected"
-              div.radio
-                label#q1op1label.radio-inline.control-label
-                input(type="radio", name=selectedOption, value=option, required)
-                input(type="text", name=optionName, placeholder="Question " + question + " option " + option, id=optionName, required).form-control.expandinginput 
-                
-        input(type="hidden", name="questions", value=questions)
-        div.span4#Submitbutton
-          button(type = "submit")#sbmitBtn.btn.btn-success Generate Form!
-        br
-        em By submitting you confirm that you have read and agree to 
-          a(href="/policy") the terms and policies of privacy
-          span Do not share passwords, credit card information or other sensitive information through these forms.
+        - var options = Array(4);
+        each option in options
+          div.form-group
+            - var optionName = name + "option" + option
+            - var selectedOption = "question" + question + "selected"
+            div.radio
+              label#q1op1label.radio-inline.control-label
+              input(type="radio", name=selectedOption, value=option, required)
+              input(type="text", name=optionName, placeholder="Question " + question + " option " + option, id=optionName, required).form-control.expandinginput 
+        //- - }
+    input(type="hidden", name="questions", value=questions)
+    div.span4#Submitbutton
+      button(type = "submit")#sbmitBtn.btn.btn-success Generate Form!
+    br
+    em By submitting you confirm that you have read and agree to 
+      a(href="/policy") the terms and policies of privacy
+      span Do not share passwords, credit card information or other sensitive information through these forms.
