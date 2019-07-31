@@ -1,3 +1,5 @@
+//Author: Amarjeet Singh
+// Georgian Surveys
 const Author = require("../models/author");
 
 exports.create = (req, res) => {

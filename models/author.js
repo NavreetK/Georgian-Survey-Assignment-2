@@ -1,3 +1,5 @@
+//Author: Navreet Sidhu and Amarjeet Singh
+// Georgian Surveys
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 

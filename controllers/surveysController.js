@@ -1,3 +1,5 @@
+// Author: Navreet Sidhu and Daaman Kaushal
+// Georgian Surveys
 const Survey = require ('../models/survey');
 
 exports.index = (req, res) => {

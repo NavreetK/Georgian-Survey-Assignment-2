@@ -1,3 +1,5 @@
+// Author: Navreet sidhu
+// Georgian Surveys
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
