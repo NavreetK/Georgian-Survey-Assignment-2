@@ -1,11 +1,44 @@
-//- Ujjwal Bhasin, Paramvir Singh Atwal
+extends ../layout.pug 
+//-block variables
+//-  - var totalQuestions = 10
 
-extends ../layout.pug
 block content
-  .container
-    header
-      h1= survey.title
-      small= survey.status.toLowerCase()
+  form(method="POST")
+    .content
+      input(type="hidden", value=Id, name="formId")
+      div.span4#headerText
+      h3 How well you know #{userName}?
+      p Start by entering your name, #{userName} can know who knows them best.
 
-    div
-      = survey.content || "Your story is processing..."
+    input(type="text", name="responseBy", required).form-control.input-lg
+
+    h4 Questionnaire
+    - var totalQuestions = 10;
+    - var questions = Array(10);
+    - for (var q = 0; q < totalQuestions; q++) {
+      - var question = questions[q];
+      - var questionName = "question" + (q + 1);
+      div
+        h4 Questions 
+          span Question #{q}
+        div.span4
+          div.row
+          - for (var o = 1; o <= 4; o++) {
+              div.col-md-3.col-sm-3.col-lg-3
+                div.form-group
+                  div.radio
+                  label.control-label.radio-inline
+                    - var options = Array(4);
+                    input(type="radio", name=questionName, value=question + "," + o, required, id=questionName + o)
+                    span Option #{o}
+                  br
+          - }
+    - }
+    
+    div.span4#Submitbutton
+    button(type="submit").btn.btn-default Submit
+    
+    br
+    em By submitting you confirm that you have read and agree to 
+      a(href="/policy") the terms and policies of privacy
+      span Do not share passwords, credit card information or other sensitive information through these forms.
