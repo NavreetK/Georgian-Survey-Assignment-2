@@ -77,3 +77,31 @@ a {
 .form-group {
   padding: 20px 800px 20px 20px;
 }
+
+h1{
+  text-align: center;
+   
+}
+
+
+p {
+  font-size: 30px;
+}
+
+ul {
+  font-size: 20px;
+}
+
+.content {
+  padding: 5%;
+}
+
+.list {
+  font-size: 70px;
+
+
+}
+
+.title {
+  padding: 2%;
+}
