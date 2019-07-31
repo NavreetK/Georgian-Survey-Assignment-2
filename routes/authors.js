@@ -3,6 +3,6 @@ var router = express.Router();
 
 const AuthorsController = require('../controllers/authorsController');
 
-router.post('/', AuthorsController.create);
+router.get('/new', AuthorsController.new);
 
 module.exports = router;

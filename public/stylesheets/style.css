@@ -73,3 +73,7 @@ a {
     top: -30%; /* creates the blue movement on the buttons*/
   }
 }
+
+.form-group {
+  padding: 20px 800px 20px 20px;
+}

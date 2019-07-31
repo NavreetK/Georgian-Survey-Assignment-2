@@ -1,9 +1,13 @@
 const Author = require("../models/author");
 
 exports.create = (req, res) => {
-  Author.create(req.body.author)
-    .then(() =>
-      res.status(201).send({ success: "Author was created successfully" })
-    )
-    .catch(err => res.status(400).send(err));
+  res.render('authors/new',{
+    title: 'New Author'
+  });
 };
+
+exports.new = (req, res) => {
+  res.render('authors/new', {
+  });
+};
+
